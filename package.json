@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "lodash": "^4.17.11",
-    "react": "npm:@pika/react@16.13.1",
-    "react-dom": "npm:@pika/react-dom@16.13.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.0.0",

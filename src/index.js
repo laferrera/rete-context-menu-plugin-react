@@ -44,12 +44,17 @@ function install(
     e.stopPropagation();
 
     const [x, y] = [e.clientX, e.clientY];
-
-    (node ? nodeMenu : mainMenu).show(x, y, { node });
+    if (node) {
+      let additionalNodeItems =
+        typeof nodeItems === "function" ? nodeItems(node) : nodeItems;
+      nodeMenu.show(x, y, { node, additionalNodeItems });
+    } else {
+      mainMenu.show(x, y);
+    }
   });
 }
 
-export { ReactMenu, ReactComponents, IMenu };
+export { ReactMenu, ReactComponents };
 
 export default {
   name: "context-menu",
